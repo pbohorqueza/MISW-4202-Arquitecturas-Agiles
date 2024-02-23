@@ -1,0 +1,13 @@
+flask
+python-dotenv
+greenlet
+sqlalchemy
+marshmallow_sqlalchemy
+Flask-SQLAlchemy
+flask_cors
+faker_sqlalchemy
+celery
+celery[redis]
+faker
+requests
+pusher
