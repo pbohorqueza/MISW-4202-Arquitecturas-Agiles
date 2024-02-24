@@ -39,10 +39,9 @@ def process_log(log_data):
     #    "status-timestamp": "23349447474"
     # }
 
-    # return log_data
-    print("called process_log!!!")
+
     
-    # Set the status timestamp to the current time
+    # Asignar la fecha actual del log
     log_data['log-timestamp'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
     
     # Diferencia de tiempo entre el momento en que se recibe el log y el momento en que se generó el log

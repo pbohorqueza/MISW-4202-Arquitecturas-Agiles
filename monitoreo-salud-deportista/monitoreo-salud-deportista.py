@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from datetime import datetime
+from configuracion import configuracion
 
 app = Flask(__name__)
 
@@ -17,7 +18,7 @@ def get_logs():
     
     current_datetime = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
 
-    if get_logs_counter % 10 == 0:
+    if get_logs_counter % configuracion['intervalo-peticiones-error'] == 0:
         response = {
             "message": "error",
             "status": "500",
