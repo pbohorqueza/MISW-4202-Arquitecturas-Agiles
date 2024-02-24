@@ -5,7 +5,7 @@ Experimento 1 grupo 11 - Arquitecturas Agiles
 Este componente se encarga de devolver el estado de salud del deportista. Para propósitos del experimento, genera una respuesta con datos correctos, y cada cierto número de peticiones genera una respuesta de error.
 Para modificar este intervalo, modifique el valor en el archivo configuracion.py
 
-
+Ejemplos de respuesta:
 ```
 {
     "message": "success",
