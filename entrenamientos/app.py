@@ -26,13 +26,5 @@ def show(id_entrenamiento):
     return schema.dump(entrenamiento)
 
 
-@app.route("/deportistas/<int:id_deportista>/entrenamientos")
-def deportista_entrenamientos(id_deportista):
-    schema = EntrenamientoSchema()
-    entrenamientos = Entrenamiento.query.filter_by(id_deportista=id_deportista).all()
-
-    return schema.dump(entrenamientos, many=True)
-
-
 if __name__ == "__main__":
     app.run(debug=FLASK_DEBUG, port=FLASK_PORT)
