@@ -1,0 +1,8 @@
+flask
+greenlet
+gevent
+python-dotenv
+celery
+celery[redis]
+redis
+httpx

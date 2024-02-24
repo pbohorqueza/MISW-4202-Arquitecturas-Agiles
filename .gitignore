@@ -2,3 +2,9 @@
 entrenamientos/.idea
 monitoreos/.idea
 deportistas/.idea
+dump.rdb
+monitor/__pycache__
+monitor/tareas/__pycache__
+monitor/venv
+monitoreo-salud-deportista/__pycache__
+monitoreo-salud-deportista/venv
