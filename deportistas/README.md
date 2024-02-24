@@ -16,7 +16,15 @@ Es una simple api para el manejo de deportes.
 
 #### Local
 
+La configuración del ambiente de desarrollo se puede realizar de manera automática con el script `setup.sh`.
+
+```bash
+chmod +x setup.sh && ./setup.sh
+```
+
 Para correr el proyecto localmente, solo es necesario crear un `virtualenv` e instalar las dependencias.
+
+O manualmente:
 
 ```bash
 python3 -m venv .venv
