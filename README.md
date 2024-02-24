@@ -108,7 +108,7 @@ Este componente estará ejecutado en el puerto 3000. Si quiere revisar los logs,
 http://127.0.0.1:3000/logs
 
 
-Nota: Los logs generados incluyen la diferencia en milisegundos entre el momento en que se genera la respuesta, ya sea válida o de error del componente MonitoreoSaludDeportista, y el momento en que se genera el log que visualizará el administrador.
+Nota: Los logs generados incluyen la diferencia en milisegundos entre el momento en que se genera la respuesta, ya sea válida o de error del componente MonitoreoSaludDeportista, y el momento en que se genera el log que visualizará el administrador. Esto permite validar la medida de respuesta que se espera para el propósito de experimento, la cual debe ser no mayor a 2000 milisegundos (2 segundos)
 
 Ejemplo:
 
