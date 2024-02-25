@@ -139,6 +139,8 @@ Ejemplo:
 Para construir el Dockerfile de cada uno de los microservicios:
 
 ```
+docker build -t deportistas ./deportistas
+docker build -t deportes ./deportes
 docker build -t monitoreo-salud-deportista ./monitoreo-salud-deportista
 docker build -t monitor ./monitor
 docker build -t entrenamientos ./entrenamientos 

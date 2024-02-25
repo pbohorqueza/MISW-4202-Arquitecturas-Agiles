@@ -1,15 +1,25 @@
 version: '3.7'
 
 services:
-  # deportistas:
-  #   build:
-  #     context: ./deportistas
-  #     dockerfile: Dockerfile
-  #   networks:
-  #     - webnet
-  #   ports:
-  #     - "5000:5000"
-  #   restart: always
+  deportes:
+    build:
+      context: ./deportes
+      dockerfile: Dockerfile
+    networks:
+      - webnet
+    ports:
+      - "5000:5000"
+    restart: always
+
+  deportistas:
+    build:
+      context: ./deportistas
+      dockerfile: Dockerfile
+    networks:
+      - webnet
+    ports:
+      - "5001:5000"
+    restart: always
 
   entrenamientos:
     build:
@@ -32,10 +42,10 @@ services:
     networks:
       - webnet
     ports:
-      - "5002:5000"
+      - "3000:3000"
     restart: always
 
-  monitoreoSaludDeportista:
+  monitoreosaluddeportista:
     build:
       context: ./monitoreo-salud-deportista
       dockerfile: Dockerfile
@@ -44,7 +54,7 @@ services:
     networks:
       - webnet
     ports:
-      - "5003:5000"
+      - "3001:3001"
     restart: always
 
 
