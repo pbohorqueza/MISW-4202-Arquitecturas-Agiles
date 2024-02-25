@@ -133,3 +133,21 @@ Ejemplo:
     "miliseconds-latency": "9.2"
   }]
 ```
+
+## Construir Dockerfile
+
+Para construir el Dockerfile de cada uno de los microservicios:
+
+```
+docker build -t monitoreo-salud-deportista ./monitoreo-salud-deportista
+docker build -t monitor ./monitor
+docker build -t entrenamientos ./entrenamientos 
+```
+
+## Construir el docker compose
+
+Para construir el docker compose, ejecute el siguiente comando en la raíz del proyecto:
+
+```
+docker-compose up
+```
