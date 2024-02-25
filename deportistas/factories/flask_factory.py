@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask
 
 from models.database import db
