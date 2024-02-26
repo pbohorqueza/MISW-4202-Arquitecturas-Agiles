@@ -67,7 +67,9 @@ def process_log(log_data):
 
 def subscribe_to_logs():
     print("Subscribiéndose al broker de mensajes...")
-    redis_client = redis.StrictRedis(host=configuracion['redis-host'], port=configuracion['redis-port'], db=configuracion['redis-db'])
+    #print(f"Host: {configuracion['redis-host']}, Port: {configuracion['redis-port']}, DB: {configuracion['redis-db']}")
+    redis_client = redis.StrictRedis(host='localhost', port=6379, db=0)
+    #redis_client = redis.StrictRedis(host=configuracion['redis-host'], port=configuracion['redis-port'], db=configuracion['redis-db'], password=configuracion['redis-password'])
     pubsub = redis_client.pubsub()
     pubsub.subscribe('log_channel')
     for item in pubsub.listen():

@@ -1,6 +1,16 @@
 version: '3.7'
 
 services:
+
+  redis:
+    image: "redis:alpine"
+    container_name: "redis"
+    ports:
+      - "6379:6379"
+    networks:
+      - webnet
+    restart: always
+
   deportes:
     build:
       context: ./deportes
@@ -64,6 +74,11 @@ services:
     ports:
       - "3000:3000"
     restart: always
+    depends_on:
+      - deportes
+      - deportistas
+      - entrenamientos
+      - redis
 
   monitoreosaluddeportista:
     build:

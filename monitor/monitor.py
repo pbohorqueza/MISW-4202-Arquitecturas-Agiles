@@ -43,6 +43,8 @@ def logs():
 
 
 def run_monitor_ping_echo():
+    print("Running monitor_ping_echo")
+    print(configuracion)
     redis = Redis(configuracion['redis-host'], configuracion['redis-port'], configuracion['redis-db'])  # Conexión a Redis
     while True:
         print("Running monitor_ping_echo")
