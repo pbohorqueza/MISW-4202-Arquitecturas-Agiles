@@ -8,7 +8,7 @@ services:
     networks:
       - webnet
     ports:
-      - "5000:5000"
+      - "5003:5003"
     restart: always
 
   deportistas:
@@ -18,7 +18,7 @@ services:
     networks:
       - webnet
     ports:
-      - "5001:5000"
+      - "5001:5001"
     restart: always
 
   entrenamientos:
@@ -30,7 +30,7 @@ services:
     networks:
       - webnet
     ports:
-      - "5001:5000"
+      - "5002:5002"
     restart: always
 
   monitor:

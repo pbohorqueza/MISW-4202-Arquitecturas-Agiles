@@ -3,4 +3,4 @@ COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
 ENTRYPOINT [ "python" ]
-CMD [ "monitor.py" ]
+CMD [ "monitor.py", "&&", "run_celery.sh" ]

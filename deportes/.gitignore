@@ -1,5 +1,4 @@
 .venv
 .idea
-.env
 instance/*
 celerybeat-schedule.db
