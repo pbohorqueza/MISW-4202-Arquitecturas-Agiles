@@ -1,6 +1,11 @@
 Experimento 1 grupo 11 - Arquitecturas Agiles
 ==========================
 
+## Instancia EC2 donde se pueden visualizar los logs:
+http://ec2-35-170-224-6.compute-1.amazonaws.com:3000/logs
+
+**IMPORTANTE!** El servidor de EC2 se apagó para evitar costos de AWS. Al prenderlo cambió la IP ya que igualmente tocaría pagar para tener una IP con un dominio fijo. La dirección en este documento corresponde a la IP actual, por consiguiente la dirección IP en el cuaderno de trabajo puede no coincidir.
+
 ## Componente MonitoreoSaludDeportista
 Este componente se encarga de devolver el estado de salud del deportista. Para propósitos del experimento, genera una respuesta con datos correctos, y cada cierto número de peticiones genera una respuesta de error.
 Para modificar este intervalo, modifique el valor en el archivo configuracion.py
