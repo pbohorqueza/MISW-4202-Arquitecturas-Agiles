@@ -41,6 +41,10 @@ Active el entorno virtual
 
     source venv/bin/activate
 
+Instale las dependencias
+
+    pip install -r requirements.txt
+
 
 Para ejecutar el componente, agregue permisos de escritura al archivo run.sh
 
@@ -67,7 +71,9 @@ Active el entorno virtual
 
     source venv/bin/activate
 
+Instale las dependencias
 
+    pip install -r requirements.txt
 
 Luego corra el archivo run-tasks.sh asegúrandose de que el archivo tiene permisos de ejecución
 
