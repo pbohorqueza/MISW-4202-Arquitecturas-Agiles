@@ -21,6 +21,13 @@ services:
     build:
       context: ./deportistas
       dockerfile: Dockerfile
+    environment: 
+      - ENV=dev
+      - QUEUE_URL="redis://localhost:6379/0"
+      - DATABASE_URL=sqlite:///database.db
+      - ENTRENAMIENTOS_URL="http://127.0.0.1:5002"
+      - FLASK_PORT=5001
+      - FLASK_DEBUG=true
     networks:
       - webnet
     ports:
@@ -33,6 +40,12 @@ services:
       dockerfile: Dockerfile
     environment: 
       - ENV=dev
+      - QUEUE_URL="redis://localhost:6379/0"
+      - DATABASE_URL=sqlite:///database.db
+      - DEPORTISTAS_URL="http://127.0.0.1:5001"
+      - DEPORTES_URL="http://127.0.0.1:5003"
+      - FLASK_PORT=5002
+      - FLASK_DEBUG=true
     networks:
       - webnet
     ports:
@@ -45,6 +58,7 @@ services:
       dockerfile: Dockerfile
     environment: 
       - ENV=dev
+      - FLASK_APP=app
     networks:
       - webnet
     ports:
