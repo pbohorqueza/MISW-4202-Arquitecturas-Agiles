@@ -5,6 +5,12 @@ services:
     build:
       context: ./deportes
       dockerfile: Dockerfile
+    environment: 
+      - ENV=dev
+      - QUEUE_URL="redis://localhost:6379/0"
+      - DATABASE_URL=sqlite:///database.db
+      - FLASK_PORT=5003
+      - FLASK_DEBUG=true
     networks:
       - webnet
     ports:
