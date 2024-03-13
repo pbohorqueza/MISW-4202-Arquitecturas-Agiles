@@ -32,7 +32,7 @@ def logs():
             json.dump([], file)
     elif os.path.getsize(LOGS_FILE) == 0:
         # Si el archivo está vacío, devolver un mensaje indicando que no hay datos
-         with open(LOGS_FILE, 'a+') as file:
+        with open(LOGS_FILE, 'a+') as file:
             json.dump([], file)
             return jsonify({'message': 'No logs available'})
     
@@ -43,8 +43,7 @@ def logs():
 
 
 def run_monitor_ping_echo():
-    print("Running monitor_ping_echo")
-    print(configuracion)
+
     redis = Redis(configuracion['redis-host'], configuracion['redis-port'], configuracion['redis-db'])  # Conexión a Redis
     while True:
         print("Running monitor_ping_echo")
