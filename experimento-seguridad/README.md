@@ -1,4 +1,4 @@
-Experimento 2 (Seguridad) grupo 11 - Arquitecturas Agiles
+Experimento 2 (Seguridad) - Grupo 11 - Arquitecturas Agiles
 ==========================
 
 ## Instancia EC2 donde se pueden visualizar los logs:
