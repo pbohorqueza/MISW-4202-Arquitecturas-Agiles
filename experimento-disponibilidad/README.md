@@ -1,4 +1,4 @@
-Experimento 1 grupo 11 - Arquitecturas Agiles
+Experimento 1 (Disponibilidad) - grupo 11 - Arquitecturas Agiles
 ==========================
 
 ## Instancia EC2 donde se pueden visualizar los logs:
