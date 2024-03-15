@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  aim:
+    build:
+      context: ./aim
+      dockerfile: Dockerfile
+    environment: 
+      - ENV=dev
+      - DATABASE_URL=sqlite:///database.db
+    ports:
+      - "3000:3000"
+    restart: always
+
+  gestor-deportivo:
+    build:
+      context: ./gestor-deportivo
+      dockerfile: Dockerfile
+    environment: 
+      - ENV=dev
+      - DATABASE_URL=sqlite:///database.db
+    ports:
+      - "3001:3001"
+    restart: always
+    depends_on:
+      - aim
