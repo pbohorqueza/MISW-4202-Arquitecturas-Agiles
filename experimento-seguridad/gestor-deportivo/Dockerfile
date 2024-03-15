@@ -5,4 +5,4 @@ ADD requirements.txt /app/
 RUN pip install -r requirements.txt
 ADD * /app/
 ENTRYPOINT ["./run.sh"]
-EXPOSE 3000
+EXPOSE 3001

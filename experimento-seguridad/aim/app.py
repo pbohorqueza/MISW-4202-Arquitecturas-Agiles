@@ -1,6 +1,5 @@
 
 from flask import Flask, request, jsonify
-from configuracion import configuracion
 import jwt
 from typing import List, Dict, Optional
 
@@ -14,6 +13,10 @@ credenciales_usuarios = [
     {"uuid": "15893de-bf0c-4978-9880-53a84fe08b94", "usuario": "usuario1", "password": "password1"},
     {"uuid": "488b2fc3-fb48-4549-8eaf-3c0ffca57c2a", "usuario": "usuario2", "password": "password2"}
 ]
+
+@app.route('/')
+def index():
+    return "AIM service"
 
 @app.route('/login', methods=['POST'])
 def login():

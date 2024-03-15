@@ -8,6 +8,8 @@ services:
     environment: 
       - ENV=dev
       - DATABASE_URL=sqlite:///database.db
+      - FLASK_ENV=development
+      - FLASK_RUN_PORT=3000
     ports:
       - "3000:3000"
     restart: always
@@ -18,7 +20,9 @@ services:
       dockerfile: Dockerfile
     environment: 
       - ENV=dev
+      - FLASK_ENV=development
       - DATABASE_URL=sqlite:///database.db
+      - FLASK_RUN_PORT=3001
     ports:
       - "3001:3001"
     restart: always
