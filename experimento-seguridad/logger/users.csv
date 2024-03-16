@@ -1,0 +1,6 @@
+id,uuid,usuario,password,reglas
+1,15893de-bf0c-4978-9880-53a84fe08b94,usuario1,password1,perfil-deportivo/deportista/salud
+2,488b2fc3-fb48-4549-8eaf-3c0ffca57c2a,usuario2,password2,perfil-demografico/deportista/pais
+3,ce5b2145-5e00-464f-81b7-484152955bcd,usuario3,password3,entrenamiento/deportista/estado-fisico
+4,e5aa3d12-15e3-4d04-830c-25277c959e4b,usuario4,password4,facturacion/socio/logistica
+5,9f64e7c3-e89d-4b49-bb43-0d3a1107b83a,usuario5,password5,perfil-deportivo/deportista/salud
