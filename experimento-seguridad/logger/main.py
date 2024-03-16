@@ -1,15 +1,11 @@
-import requests
-import time
-import logging
 import csv
-from dotenv import load_dotenv
+import logging
 import os
 
-load_dotenv()
+import requests
+from dotenv import load_dotenv
 
-endpoints = [
-    'http://127.0.0.1:3001'
-]
+load_dotenv()
 
 AIM_API_URL = os.environ.get('AIM_API_URL')
 GESTOR_DEPORTIVO_API_URL = os.environ.get('GESTOR_DEPORTIVO_API_URL')
