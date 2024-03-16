@@ -39,12 +39,16 @@ ejemplo:
 ```
 
 ## Servicio gestor-deportivo
-Descripción componente: xxxxxxx
-xxxxxxx
-xxxxxxx
-xxxxxxx
-xxxxxxx
-xxxxxxx
+Descripción componente: Este servicio expone un API llamado /consultar-perfil-deportivo el cual espera un token válido que debe ser generado a través del servicio AIM y su API /login
+
+Si el token (JWT) es válido y está asociado a un usuario con las reglas de autorización válidas, se reponderá con la información asociada a la salud del deportista en su perfil deportivo. de lo contrario se responde con un error de autorización.
+
+ejemplo de respuesta válida
+```
+{
+    "perfil-deportivo": "xxx x xxxx xxx xxxx "
+}
+```
 
 ## Instalación del experimento:
 1. Instale docker https://www.docker.com/products/docker-desktop/
