@@ -8,9 +8,12 @@ xxxxx
 ## Servicios corriendo en la instancia de EC2:
 
 Link al servicio AIM en el servidor EC2 donde corre el API login (POST):
+
 http://ec2-34-235-166-27.compute-1.amazonaws.com:3000/login
 
+
 Link al servicio Gestor-Deportivo en el servidor EC2 donde corre el API consultar-perfil-deportivo (GET):
+
 http://ec2-34-235-166-27.compute-1.amazonaws.com:3001/consultar-perfil-deportivo
 
 
