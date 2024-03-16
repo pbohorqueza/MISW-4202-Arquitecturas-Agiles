@@ -62,7 +62,7 @@ ejemplo de respuesta válida
 }
 ```
 
-## Instalación del experimento:
+## Instalación del experimento y ejecución de logs:
 1. Instale docker https://www.docker.com/products/docker-desktop/
 2. Usando la terminal, ubíquese en la raiz de la carpeta experimento-seguridad
 3. ejecute el siguiente comando:
@@ -72,4 +72,23 @@ docker-compose up
 ```
 
 4. El servicio de AIM correrá en el puerto 3000 y el servicio gestor-deportivo en el puerto 3001
-5. Para ejecutar los logs, se debe correr la aplicación xxxxx. Esta aplicación usa el archivo csv con un listado de usuarios con reglas validas e invalidas. Solo usuarios con la regla de acceso ‘perfil-deportivo/deportista/salud’ garantiza la visualización de los datos de salud del deportista
+5. Para ejecutar los logs, se debe correr la aplicación ubicad en la carpeta logger. Esta aplicación usa el archivo users.csv con un listado de usuarios con reglas validas e invalidas. Solo usuarios con la regla de acceso ‘perfil-deportivo/deportista/salud’ garantiza la visualización de los datos de salud del deportista y una respuesta válida 200. Usuarios sin reglas de acceso válidas retornan un error 401.
+
+Ubíquese en la carpeta logger y cree un ambiente virtual de pyhton en la carpeta
+
+    python -m venv venv
+
+Active el entorno virtual
+
+    source venv/bin/activate
+
+Instale las dependencias
+
+    pip install -r requirements.txt
+
+Ejecute los logs:
+
+    python3 main.py
+
+
+Los logs se generarán en el archivo request_log.txt
