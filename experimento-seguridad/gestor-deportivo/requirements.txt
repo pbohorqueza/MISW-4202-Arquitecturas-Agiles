@@ -9,3 +9,4 @@ faker_sqlalchemy
 faker
 requests
 pusher
+pyjwt
