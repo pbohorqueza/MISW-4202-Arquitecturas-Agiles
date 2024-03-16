@@ -152,7 +152,7 @@ docker-compose up
 
 Ubíquese en la carpeta logger y cree un ambiente virtual de pyhton en la carpeta
 
-    python -m venv venv
+    python3 -m venv venv
 
 Active el entorno virtual
 
@@ -160,7 +160,7 @@ Active el entorno virtual
 
 Instale las dependencias
 
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
 
 Ejecute los logs:
 
