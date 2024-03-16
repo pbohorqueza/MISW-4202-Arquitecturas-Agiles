@@ -1,10 +1,6 @@
 Experimento 2 (Seguridad) - Grupo 11 - Arquitecturas Agiles
 ==========================
 
-## Link a los logs generados:
-xxxxx
-
-
 ## Servicios corriendo en la instancia de EC2:
 
 Link al servicio AIM en el servidor EC2 donde corre el API login (POST):
