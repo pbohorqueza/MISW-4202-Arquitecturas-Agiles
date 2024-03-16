@@ -1,8 +1,17 @@
 Experimento 2 (Seguridad) - Grupo 11 - Arquitecturas Agiles
 ==========================
 
-## Instancia EC2 donde se pueden visualizar los logs:
-http://ec2-35-170-224-6.compute-1.amazonaws.com:3000/logs
+## Link a los logs generados:
+xxxxx
+
+
+## Servicios corriendo en la instancia de EC2:
+
+Link al servicio AIM en el servidor EC2 donde corre el API login (POST):
+http://ec2-34-235-166-27.compute-1.amazonaws.com:3000/login
+
+Link al servicio Gestor-Deportivo en el servidor EC2 donde corre el API consultar-perfil-deportivo (GET):
+http://ec2-34-235-166-27.compute-1.amazonaws.com:3001/consultar-perfil-deportivo
 
 
 ## Servicio AIM
