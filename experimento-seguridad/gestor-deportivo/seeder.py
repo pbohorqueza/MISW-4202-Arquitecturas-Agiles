@@ -3,5 +3,5 @@ from app import app
 
 if __name__ == "__main__":
     with app.app_context():
-        PerfilDeportivo.factory().create(1)
+        PerfilDeportivo.factory().create(10)
 
