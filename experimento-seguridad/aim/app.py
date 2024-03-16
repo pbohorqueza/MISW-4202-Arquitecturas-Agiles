@@ -18,6 +18,32 @@ credenciales_usuarios = [
 def index():
     return "AIM service"
 
+@app.route('/validar-token', methods=['POST'])
+def validar_token():
+    auth_header = request.headers.get('Authorization')
+
+    # Verificar si se proporcionó un encabezado de autorización
+    if not auth_header:
+        return jsonify({"mensaje": "Token no proporcionado"}), 401
+
+    # Verificar si el encabezado de autorización está en el formato correcto
+    partes = auth_header.split()
+    if len(partes) != 2 or partes[0].lower() != 'bearer':
+        return jsonify({"mensaje": "Encabezado de autorización inválido"}), 401
+
+    # Obtener el token de los parts
+    token = partes[1]
+
+    # Decodificar y verificar el token
+    try:
+        token_payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        usuario_id = token_payload.get('uuid')
+        return jsonify({"uuid": usuario_id}), 200
+    except jwt.ExpiredSignatureError:
+        return jsonify({"mensaje": "Token expirado"}), 401
+    except jwt.InvalidTokenError:
+        return jsonify({"mensaje": "Token inválido"}), 401
+
 @app.route('/login', methods=['POST'])
 def login():
     datos = request.get_json()
