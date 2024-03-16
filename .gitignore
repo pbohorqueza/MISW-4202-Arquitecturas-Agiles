@@ -4,6 +4,7 @@
 # Ignorar todas las carpetas llamadas venv o env
 **/venv/
 **/env/
+**/.env/
 
 # Ignorar todas las carpetas __pycache__
 **/__pycache__/
