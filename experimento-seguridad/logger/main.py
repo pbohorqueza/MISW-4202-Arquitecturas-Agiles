@@ -40,7 +40,7 @@ if __name__ == "__main__":
                 response = requests.get(url,
                                         headers={"Authorization": f"Bearer {login.json().get('token')}"})
 
-                sleep(5)
+                sleep(3)
 
                 if response.status_code == 200:
                     log = f"Endpoint {url} - Usuario {user['usuario']} - Status Code: {response.status_code}"
