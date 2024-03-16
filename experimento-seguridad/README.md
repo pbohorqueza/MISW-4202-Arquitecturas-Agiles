@@ -18,13 +18,99 @@ Descripción componente: Este servicio expone 2 APIs: login y validar-token
 
 El servicio de login recibe un request POST donde el body debe tener dos parametros en formato JSON (usuario y password)
 
-ejemplo:
+ejemplo de respuesta inválida de usuario no autorizado:
 
 ```
 {
-    "usuario": "usuario1",
-    "password": "password1"
+    "mensaje": "El usuario no cuenta con el nivel de acceso requerido"
 }
+```
+
+ejemplo de respuesta válida:
+
+```
+[
+    {
+        "created_at": "2024-03-16T13:29:44",
+        "historia_medica": "Poor method age international. Large beat pass include into purpose. Read scene thing wait.",
+        "id": 1,
+        "id_deportista": 717,
+        "incapacidades": "Real dinner participant trip.",
+        "lesiones": "General rate ahead expect skin behind daughter political."
+    },
+    {
+        "created_at": "2024-03-16T13:29:44",
+        "historia_medica": "Style activity food phone north court economy.",
+        "id": 2,
+        "id_deportista": 231,
+        "incapacidades": "People between society buy paper.",
+        "lesiones": "Serve long trade."
+    },
+    {
+        "created_at": "2024-03-16T13:29:44",
+        "historia_medica": "Police trade point TV enjoy. Say positive audience. Relationship throughout by mouth pull hair. Cup wind black information station manage use.",
+        "id": 3,
+        "id_deportista": 409,
+        "incapacidades": "Fine wide cut argue activity house series.",
+        "lesiones": "Alone value black speak."
+    },
+    {
+        "created_at": "2024-03-16T13:29:44",
+        "historia_medica": "Someone modern population past. Opportunity hot live nature then development field.",
+        "id": 4,
+        "id_deportista": 690,
+        "incapacidades": "Meet issue follow point individual.",
+        "lesiones": "Federal concern need person season."
+    },
+    {
+        "created_at": "2024-03-16T13:29:44",
+        "historia_medica": "Theory half body hot institution foreign. Size reason business again such. Change stop tough range.",
+        "id": 5,
+        "id_deportista": 618,
+        "incapacidades": "Fish hard choose class.",
+        "lesiones": "Perhaps down well industry."
+    },
+    {
+        "created_at": "2024-03-16T13:29:44",
+        "historia_medica": "Blood church various space market store center two. Hair every son ten.",
+        "id": 6,
+        "id_deportista": 507,
+        "incapacidades": "Challenge others account ok those evidence.",
+        "lesiones": "Mind lawyer accept house entire."
+    },
+    {
+        "created_at": "2024-03-16T13:29:44",
+        "historia_medica": "Growth discussion personal strategy agreement. However agent mission media stop finally.",
+        "id": 7,
+        "id_deportista": 606,
+        "incapacidades": "Think white director dinner herself wide.",
+        "lesiones": "Instead spring operation be visit marriage politics."
+    },
+    {
+        "created_at": "2024-03-16T13:29:44",
+        "historia_medica": "End central street network threat bring such enough. Ok officer paper growth.",
+        "id": 8,
+        "id_deportista": 265,
+        "incapacidades": "There mission follow add eye spend those.",
+        "lesiones": "Piece investment hot effect."
+    },
+    {
+        "created_at": "2024-03-16T13:29:44",
+        "historia_medica": "Statement right describe answer teach positive do care. Treatment benefit floor no.",
+        "id": 9,
+        "id_deportista": 719,
+        "incapacidades": "Building PM world major.",
+        "lesiones": "Though particular authority red national country away."
+    },
+    {
+        "created_at": "2024-03-16T13:29:44",
+        "historia_medica": "Group night civil eight idea and. List seek girl political street. Black writer hard husband although up while.",
+        "id": 10,
+        "id_deportista": 625,
+        "incapacidades": "Themselves professor a middle care TV across.",
+        "lesiones": "Clearly hair woman."
+    }
+]
 ```
 
 Si la combinación de usuario y password es válida se recibe el token JTW en la respuesta
