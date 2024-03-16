@@ -2,6 +2,8 @@ import csv
 import logging
 import os
 import json
+from time import sleep
+
 import requests
 from dotenv import load_dotenv
 
@@ -37,6 +39,8 @@ if __name__ == "__main__":
                 url = GESTOR_DEPORTIVO_API_URL + '/consultar-perfil-deportivo'
                 response = requests.get(url,
                                         headers={"Authorization": f"Bearer {login.json().get('token')}"})
+
+                sleep(3)
 
                 if response.status_code == 200:
                     log = f"Endpoint {url} - Usuario {user['usuario']} - Status Code: {response.status_code}"
