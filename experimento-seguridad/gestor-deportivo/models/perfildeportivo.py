@@ -1,6 +1,8 @@
 from factories import ModelFactory
 from .database import db
 from faker import Faker
+from sqlalchemy import func
+
 
 
 class PerfilDeportivo(db.Model):

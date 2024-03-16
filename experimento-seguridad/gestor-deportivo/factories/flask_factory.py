@@ -3,8 +3,7 @@ import os
 from flask import Flask
 
 from models.database import db
-from .celery_factory import celery_init_app
-from config import DATABASE_URL, QUEUE_URL
+from config import DATABASE_URL
 
 
 def create_app() -> Flask:
