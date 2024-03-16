@@ -46,7 +46,7 @@ xxxxxxx
 xxxxxxx
 xxxxxxx
 
-### Instalación del experimento:
+## Instalación del experimento:
 1. Instale docker https://www.docker.com/products/docker-desktop/
 2. Usando la terminal, ubíquese en la raiz de la carpeta experimento-seguridad
 3. ejecute el siguiente comando:
