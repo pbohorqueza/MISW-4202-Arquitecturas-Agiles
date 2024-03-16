@@ -14,14 +14,15 @@ db = SQLAlchemy(app)
 # Clave secreta para firmar y verificar el token (debería ser segura y secreta en un entorno real)
 SECRET_KEY = 'SPORTAPP_#20240301_MISO@JUPAAND'
 
-# Base de datos simulada con información de usuarios y sus credenciales
-credenciales_usuarios = [
-    {"uuid": "15893de-bf0c-4978-9880-53a84fe08b94", "usuario": "usuario1", "password": "password1", "reglas": "perfil-deportivo/deportista/salud"},
-    {"uuid": "488b2fc3-fb48-4549-8eaf-3c0ffca57c2a", "usuario": "usuario2", "password": "password2", "reglas": "perfil-demografico/deportista/pais"},
-    {"uuid": "ce5b2145-5e00-464f-81b7-484152955bcd", "usuario": "usuario3", "password": "password3", "reglas": "entrenamiento/deportista/estado-fisico"},
-    {"uuid": "e5aa3d12-15e3-4d04-830c-25277c959e4b", "usuario": "usuario4", "password": "password4", "reglas": "facturacion/socio/logistica"},
-    {"uuid": "9f64e7c3-e89d-4b49-bb43-0d3a1107b83a", "usuario": "usuario5", "password": "password5", "reglas": "perfil-deportivo/deportista/salud"}
-]
+class Usuario(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    uuid = db.Column(db.String(36), unique=True, nullable=False)
+    usuario = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(50), nullable=False)
+    reglas = db.Column(db.String(50), unique=False, nullable=False)
+
+    def _repr_(self):
+        return '<Usuario %r>' % self.usuario
 
 @app.route('/')
 def index():
@@ -65,11 +66,11 @@ def login():
     password = datos.get('password')
 
     # Verificar las credenciales del usuario
-    autorizar_usuario = verificar_credenciales(usuario, password, credenciales_usuarios)
+    autorizar_usuario = verificar_credenciales(usuario, password)
     if autorizar_usuario is not None:
         # Generar el token JWT con información sobre los permisos del usuario
         token_payload = {
-            "uuid": autorizar_usuario.get("uuid")
+            "uuid": autorizar_usuario.uuid
         }
         token = jwt.encode(token_payload, SECRET_KEY, algorithm='HS256')
 
@@ -77,38 +78,9 @@ def login():
     else:
         return jsonify({"mensaje": "Credenciales inválidas"}), 401
     
-def verificar_credenciales(usuario: str, password: str, usuarios: List[Dict[str, str]]) -> Optional[Dict[str, str]]:
-    usuario = next(filter(lambda x: x.get("usuario") == usuario and x.get("password") == password, usuarios), None)
+def verificar_credenciales(usuario: str, password: str) -> Usuario:
+    usuario = Usuario.query.filter_by(usuario=usuario, password=password).first()
     return usuario
-
-
-
-
-class Usuario(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    uuid = db.Column(db.String(36), unique=True, nullable=False)
-    usuario = db.Column(db.String(50), unique=True, nullable=False)
-    password = db.Column(db.String(50), nullable=False)
-    reglas = db.Column(db.String(50), unique=False, nullable=False)
-
-    def _repr_(self):
-        return '<Usuario %r>' % self.usuario
-
-# Ruta para consultar un usuario por nombre y contraseña
-@app.route('/consulta_usuario', methods=['POST'])
-def consulta_usuario():
-    data = request.json
-    usuario = data.get('usuario')
-    password = data.get('password')
-    
-    usuario_encontrado = Usuario.query.filter_by(usuario=usuario, password=password).first()
-    
-    if usuario_encontrado:
-        return jsonify({'mensaje': 'Usuario encontrado'})
-    else:
-        return jsonify({'mensaje': 'Usuario no encontrado'})
-
-
 
 with app.app_context():
     db.create_all()
