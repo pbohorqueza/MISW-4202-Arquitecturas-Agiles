@@ -148,7 +148,7 @@ docker-compose up
 ```
 
 4. El servicio de AIM correrá en el puerto 3000 y el servicio gestor-deportivo en el puerto 3001
-5. Para ejecutar los logs, se debe correr la aplicación ubicad en la carpeta logger. Esta aplicación usa el archivo users.csv con un listado de usuarios con reglas validas e invalidas. Solo usuarios con la regla de acceso ‘perfil-deportivo/deportista/salud’ garantiza la visualización de los datos de salud del deportista y una respuesta válida 200. Usuarios sin reglas de acceso válidas retornan un error 401.
+5. Para ejecutar los logs, se debe correr la aplicación ubicada en la carpeta logger. Esta aplicación usa el archivo users.csv con un listado de usuarios con reglas validas e invalidas. Solo usuarios con la regla de acceso ‘perfil-deportivo/deportista/salud’ garantiza la visualización de los datos de salud del deportista y una respuesta válida 200. Usuarios sin reglas de acceso válidas retornan un error 401.
 
 Ubíquese en la carpeta logger y cree un ambiente virtual de pyhton en la carpeta
 
